@@ -24,7 +24,7 @@ func (c *aztecCode) Content() string {
 }
 
 func (c *aztecCode) Metadata() barcode.Metadata {
-	return barcode.Metadata{"Aztec", 2}
+	return barcode.Metadata{barcode.TypeAztec, 2}
 }
 
 func (c *aztecCode) ColorModel() color.Model {
@@ -40,10 +40,6 @@ func (c *aztecCode) At(x, y int) color.Color {
 		return color.Black
 	}
 	return color.White
-}
-
-func (c *aztecCode) CheckSum() int {
-	return 0
 }
 
 func (c *aztecCode) set(x, y int) {
